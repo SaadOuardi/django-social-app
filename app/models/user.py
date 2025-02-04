@@ -13,6 +13,7 @@ class User(AbstractUser):
         related_name="user_groups",
         blank=True,
     )
+    
     user_permissions = models.ManyToManyField(
         "auth.Permission",
         related_name="user_permissions",

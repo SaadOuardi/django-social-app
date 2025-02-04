@@ -10,6 +10,6 @@ router.register(r"posts", PostView, basename="post")
 urlpatterns = [
     path("users/", UserView.as_view(), name="users"),
     # path("posts/", PostView.as_view(), name="posts"),
-    path("", include(router.urls)),  # This registers the ViewSet routes
+    path("", include(router.urls)),
     path("votes/", VoteView.as_view(), name="votes"),
 ]
