@@ -5,6 +5,9 @@ from app.models.user import User
 from app.serializers.user_serializer import UserSerializer
 
 class UserRegisterView(APIView):
+    """
+    API view to register new users.
+    """
     def post(self, request):
         serializer = UserSerializer(data=request.data)
         if serializer.is_valid():
