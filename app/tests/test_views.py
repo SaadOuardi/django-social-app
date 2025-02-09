@@ -7,7 +7,6 @@ from rest_framework.authtoken.models import Token
 
 User = get_user_model()
 
-
 class UserTests(APITestCase):
     def test_register_user(self):
         """
