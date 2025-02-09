@@ -37,3 +37,5 @@ class PostTests(APITestCase):
         response = self.client.get(f"/api/posts/{post.id}/")
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(response.data["title"], "Test Post")
+        
+# add failing tests
