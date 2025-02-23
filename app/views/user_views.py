@@ -1,16 +1,9 @@
-from rest_framework import status
-from rest_framework.response import Response
 from rest_framework.views import APIView
-from app.models.user import User
-from app.serializers.user_serializer import UserSerializer
+from app.services.user_service import UserService
 
 class UserRegisterView(APIView):
     """
     API view to register new users.
     """
     def post(self, request):
-        serializer = UserSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        return UserService.register_user(request)
